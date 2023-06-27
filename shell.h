@@ -127,7 +127,8 @@ char **string_split2(char *string, char delimeter);
 
 /*all_about_memory_file*/
 int pointer_free(void **pointer);
-void *memory_reallocation(void *pointer, unsigned int old, unsigned int new);
+void *memory_reallocation(void *pointer, unsigned int old_s,
+		unsigned int new_s);
 char *memory_setting(char *m, char byte, unsigned int amount);
 void string_free(char **ss);
 

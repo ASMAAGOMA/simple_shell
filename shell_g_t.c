@@ -15,8 +15,11 @@ ssize_t buf_in(information_t *information, char **buffer, size_t *l)
 
 	if (!*l)
 	{
-		free(buffer);
+		if (*buffer != NULL)
+		{
+		free(*buffer);
 		*buffer = NULL;
+		}
 		signal(SIGINT, s_h);
 #if USE_GETLINE
 		t = getline(buffer, &le, stdin);

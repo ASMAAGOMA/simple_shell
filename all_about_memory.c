@@ -35,27 +35,28 @@ void string_free(char **ss)
 /**
  * memory_reallocation - reallocates memory
  * @pointer: pointes to the prev mallocated memory
- * @old: size of prev block
- * @new: size of new block
+ * @old_s: size of prev block
+ * @new_s: size of new block
  * Return: pointes to the old block
  */
 
-void *memory_reallocation(void *pointer, unsigned int old, unsigned int new)
+void *memory_reallocation(void *pointer, unsigned int old_s,
+	unsigned int new_s)
 {
 	char *m;
 
 	if (!pointer)
-		return (malloc(new));
-	if (!new)
+		return (malloc(new_s));
+	if (!new_s)
 		return (free(pointer), NULL);
-	if (new == old)
+	if (new_s == old_s)
 		return (pointer);
-	m = malloc(new);
+	m = malloc(new_s);
 	if (!pointer)
 		return (NULL);
-	old = old < new ? old : new;
-	while (old--)
-		m[old] = ((char *)pointer)[old];
+	old_s = old_s < new_s ? old_s : new_s;
+	while (old_s--)
+		m[old_s] = ((char *)pointer)[old_s];
 	free(pointer);
 	return (m);
 }
