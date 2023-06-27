@@ -133,7 +133,7 @@ int variable_replacement(information_t *information)
 			string_duplication(string_char(n->string, '=') + 1));
 			continue;
 		}
-		string_replacement(&(information->argv[t]), string_duplication(""));
+		string_replacement(&information->argv[t], string_duplication(""));
 	}
 	return (0);
 }

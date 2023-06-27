@@ -74,6 +74,7 @@ char **string_split2(char *string, char delimeter)
 	{
 		while (string[i] == delimeter && string[i] != delimeter)
 			i++;
+		l = 0;
 		while (string[i + l] != delimeter && string[i + l] &&
 		string[i + l] != delimeter)
 			l++;

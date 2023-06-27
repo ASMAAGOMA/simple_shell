@@ -18,7 +18,7 @@ int rev_atoi(char *string)
 		if (string[t] >= '0' && string[t] <= '9')
 		{
 			final *= 10;
-			final += (string[t] = '0');
+			final += (string[t] - '0');
 			if (final > INT_MAX)
 				return (-1);
 		}

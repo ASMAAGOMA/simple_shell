@@ -17,6 +17,7 @@ char *his_file(information_t *information)
 				string_length(HISTORY_FILE) + 2));
 	if (!buffer)
 		return (NULL);
+	buffer[0] = 0;
 	string_copy(buffer, d);
 	string_cat(buffer, "/");
 	string_cat(buffer, HISTORY_FILE);

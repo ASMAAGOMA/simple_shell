@@ -14,7 +14,7 @@ char *string_n_copy(char *dest, char *src, int m)
 
 	i = 0;
 
-	while ((src[i] != '\0') && (i < m - 1))
+	while (src[i] != '\0' && i < m - 1)
 	{
 		dest[i] = src[i];
 		i++;
