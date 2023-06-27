@@ -50,7 +50,7 @@ int alias_setting(information_t *information, char *string)
 	b = string_char(string, '=');
 	if (!b)
 		return (1);
-	if (!*b++)
+	if (!*++b)
 		return (alias_unsetting(information, string));
 	alias_unsetting(information, string);
 	return (add_node_at_end(&(information->alias), string, 0) == NULL);

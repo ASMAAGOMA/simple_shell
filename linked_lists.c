@@ -85,7 +85,7 @@ int print_string_list(const list_t *head)
 
 	while (head)
 	{
-		_puts(head->string ? head->string : "(nill)");
+		_puts(head->string ? head->string : "(nil)");
 		_puts("\n");
 		head = head->next;
 		t++;

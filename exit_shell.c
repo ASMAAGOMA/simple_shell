@@ -39,7 +39,7 @@ int change_directory(information_t *i)
 	int r;
 
 	if (!n)
-		_puts("TODO: getcwd failure emsg here<<\n");
+		_puts("TODO: >>getcwd failure emsg here<<\n");
 	if (!i->argv[1])
 	{
 		d = getting_environment(i, "HOME=");
@@ -64,7 +64,7 @@ int change_directory(information_t *i)
 		r = chdir(i->argv[1]);
 	if (r == -1)
 	{
-		error_printer(i, "can't cd to");
+		error_printer(i, "can't cd to ");
 		error_puts(i->argv[1]), error_putchar('\n');
 	}
 	else
@@ -87,7 +87,7 @@ int the_h(information_t *information)
 	char **ar;
 
 	ar = information->argv;
-	_puts("help call works. function not yet implemented \n");
+	_puts("help call works. Function not yet implemented \n");
 	if (0)
 		_puts(*ar);
 	return (0);

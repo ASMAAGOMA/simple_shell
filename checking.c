@@ -90,6 +90,9 @@ int alias_replacement(information_t *information)
 		b = string_char(n->string, '=');
 		if (!b)
 			return (0);
+		b = string_duplication(b + 1);
+		if (!b)
+			return (0);
 		information->argv[0] = b;
 	}
 	return (1);
@@ -108,7 +111,7 @@ int variable_replacement(information_t *information)
 
 	for (t = 0; information->argv[t]; t++)
 	{
-		if (information->argv[t][0] != '$' || information->argv[t][1])
+		if (information->argv[t][0] != '$' || !information->argv[t][1])
 			continue;
 		if (!string_cmp(information->argv[t], "$?"))
 		{

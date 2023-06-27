@@ -13,7 +13,7 @@ int rev_atoi(char *string)
 
 	if (*string == '+')
 		string++;
-	for (t = 0; string[t] != '0'; t++)
+	for (t = 0; string[t] != '\0'; t++)
 	{
 		if (string[t] >= '0' && string[t] <= '9')
 		{

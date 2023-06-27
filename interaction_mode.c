@@ -7,7 +7,7 @@
  */
 int is_interact(information_t *information)
 {
-	return (isatty(STDIN_FILENO) && information->read_file_discriptor);
+	return (isatty(STDIN_FILENO) && information->read_file_discriptor <= 2);
 }
 
 /**
@@ -68,4 +68,3 @@ int my_atoi(char *string)
 		out = final;
 	return (out);
 }
-

@@ -33,7 +33,7 @@ int string_cmp(char *string1, char *string2)
 		string1++;
 		string2++;
 	}
-	if (string1 == string2)
+	if (*string1 == *string2)
 		return (0);
 	else
 		return (*string1 < *string2 ? -1 : 1);
@@ -41,19 +41,19 @@ int string_cmp(char *string1, char *string2)
 
 /**
  * starting - checking if need is starting with hay
- * @hay: the searchad string
- * @need: the string to find
+ * @haystack: the searchad string
+ * @needle: the string to find
  * Return: next char hay or null
  */
 
-char *starting(const char *hay, const char *need)
+char *starting(const char *haystack, const char *needle)
 {
-	while (*need)
+	while (*needle)
 	{
-		if (*need++ != *hay++)
+		if (*needle++ != *haystack++)
 			return (NULL);
 	}
-	return ((char *)hay);
+	return ((char *)haystack);
 }
 
 /**

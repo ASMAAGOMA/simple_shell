@@ -142,7 +142,7 @@ void command_f(information_t *information)
 		{
 			freedom(information, 1);
 			if (errno == EACCES)
-				exit(124);
+				exit(126);
 			exit(1);
 		}
 	}

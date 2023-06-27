@@ -59,7 +59,7 @@ void freedom(information_t *information, int e)
 
 	if (e)
 	{
-		if (information->command_buffer)
+		if (!information->command_buffer)
 			free(information->arg);
 		if (information->environment)
 			list_free(&(information->environment));
@@ -70,7 +70,7 @@ void freedom(information_t *information, int e)
 		string_free(information->environ);
 		information->environ = NULL;
 		pointer_free((void **)information->command_buffer);
-		if (information->read_file_discriptor)
+		if (information->read_file_discriptor > 2)
 			close(information->read_file_discriptor);
 		_putchar(BUFFER_FLUSH);
 	}

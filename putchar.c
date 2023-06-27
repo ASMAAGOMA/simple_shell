@@ -11,7 +11,7 @@ int _putchar(char c)
 	static int t;
 	static char buffer[WRITE_BUFFER_SIZE];
 
-	if (c == BUFFER_FLUSH || t > WRITE_BUFFER_SIZE)
+	if (c == BUFFER_FLUSH || t >= WRITE_BUFFER_SIZE)
 	{
 		write(1, buffer, t);
 		t = 0;

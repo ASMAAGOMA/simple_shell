@@ -33,6 +33,7 @@ ssize_t buf_in(information_t *information, char **buffer, size_t *l)
 			information->line_count_flag = 1;
 			comments_remover(*buffer);
 			building_list(information, *buffer, information->history_count++);
+			/*if (string_char(*buffer, ';')) is this a chain*/
 			{
 				*l = t;
 				information->command_buffer = buffer;

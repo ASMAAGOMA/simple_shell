@@ -8,7 +8,7 @@
  */
 char **string_split(char *string, char *delimeter)
 {
-	int i, j, l = 0, s = 0, num = 0;
+	int i, j, l, s = 0, num = 0;
 	char **m;
 
 	if (string == NULL || string[0] == 0)
@@ -28,12 +28,10 @@ char **string_split(char *string, char *delimeter)
 	{
 		while (is_delimeter(string[i], delimeter))
 			i++;
+		l = 0;
 		while (!is_delimeter(string[i + l], delimeter) &&
 		string[i + l])
 			l++;
-		while (!is_delimeter(string[i + s], delimeter) &&
-		string[i + s])
-			s++;
 		m[j] = malloc((l + 1) * sizeof(char));
 		if (!m[j])
 		{
@@ -63,9 +61,10 @@ char **string_split2(char *string, char delimeter)
 
 	if (string == NULL || string[0] == 0)
 		return (NULL);
-	if ((string[i] != delimeter && string[i + 1] == delimeter) ||
-	(string[i] != delimeter && !string[i + 1]) || string[i + 1] == delimeter)
-		num++;
+	for (i = 0; string[i] != '\0'; i++)
+		if ((string[i] != delimeter && string[i + 1] == delimeter) ||
+		(string[i] != delimeter && !string[i + 1]) || string[i + 1] == delimeter)
+			num++;
 	if (num == 0)
 		return (NULL);
 	m = malloc((1 + num) * sizeof(char *));

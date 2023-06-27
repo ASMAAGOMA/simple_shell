@@ -42,7 +42,8 @@ char **list_strings(list_t *h)
 		if (!strs)
 		{
 			for (i = 0; i < t; i++)
-				strings[t] = strs;
+				free(strings[i]);
+			free(strings);
 		}
 		strs = string_copy(strs, n->string);
 		strings[t] = strs;
